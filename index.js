@@ -5,8 +5,6 @@ const { Client } = require('pg');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Enhanced CORS configuration
-const cors = require('cors');
 
 // Allow frontend origin
 app.use(cors({
