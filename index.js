@@ -6,10 +6,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Enhanced CORS configuration
+const cors = require('cors');
+
+// Allow frontend origin
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000'],
-    credentials: true
+  origin: [
+    'http://localhost:5173',  // <-- allow your local frontend for development
+    'https://finance-navigator-dashboard.onrender.com'  // <-- your deployed frontend
+  ],
+  credentials: true
 }));
+
 
 // Add JSON parsing middleware
 app.use(express.json());
